@@ -1,0 +1,24 @@
+.loader-container {
+    height: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.loader {
+    width: 30%;
+    height: auto;
+    animation: spin 2s linear infinite;
+    align-self: center;
+    justify-self: center;
+}
+
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+

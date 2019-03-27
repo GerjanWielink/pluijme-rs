@@ -1,0 +1,19 @@
+.dashboard {
+    height: 100%;
+    display: grid;
+}
+
+@media (orientation: portrait) {
+    .dashboard {
+        justify-content: space-around;
+    }
+}
+
+@media (orientation: landscape) {
+    .row {
+        display: inline-grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-around;
+        align-self: center;
+    }
+}
