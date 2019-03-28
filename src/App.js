@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import DashboardContainer from "./routes/Dashboard/index";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./routes";
 import './root.css';
+import AppContainer from "./components/AppContainer";
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
-        <div className="container">
-            <DashboardContainer />
-        </div>
+        <BrowserRouter>
+            <AppContainer>
+                <Routes />
+            </AppContainer>
+        </BrowserRouter>
     );
   }
 }
-
-export default App;
