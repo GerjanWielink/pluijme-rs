@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./header.css";
 
 const Header = () => (
-    <div class="header">
+    <div className="header">
         <Link to="/">
             <span>Pluijme.rs</span>
         </Link>
