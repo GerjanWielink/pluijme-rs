@@ -18,7 +18,7 @@ export default class DashboardContainer extends React.Component {
     componentDidMount() {
         this.setMinimalPluijmpjeShowoffTimer();
 
-        fetch(`${baseUrl}/climate`)
+        fetch(`${baseUrl}/api/lastclimate`)
             .then((response) => {
                 return response.json();
             })

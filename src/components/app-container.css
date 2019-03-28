@@ -1,0 +1,14 @@
+.container {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: var(--header-size) auto;
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+@media (orientation: portrait) {
+    .container{
+        overflow-y: scroll;
+    }
+}

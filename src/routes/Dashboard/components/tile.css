@@ -5,11 +5,12 @@
 .tile {
     background-color: var(--primary);
     color: var(--secondary);
-    opacity: 0.5;
     width: var(--tile-size);
     height: var(--tile-size);
     padding: 20px;
     margin: 20px;
+    font-size: 2em;
+    transition: 0.1s;
 }
 
 .tile:hover {
@@ -17,4 +18,5 @@
     color: var(--primary);
     opacity: 1;
     transition: 0.3s;
+    font-size: 2.3em;
 }
