@@ -2,6 +2,8 @@ import React from 'react';
 import Dashboard from "./components/Dashboard";
 import Loader from '../../components/Loader';
 
+import { baseUrl} from "../../constants";
+
 export default class DashboardContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -16,18 +18,17 @@ export default class DashboardContainer extends React.Component {
     componentDidMount() {
         this.setMinimalPluijmpjeShowoffTimer();
 
-        fetch("http://pluijmers.duckdns.org/api/climate?time=1")
+        fetch(`${baseUrl}/climate`)
             .then((response) => {
                 return response.json();
             })
-            .then((data) => {
+            .then(({tempBMP, humiDHT, presBMP}) => {
                 this.setState({
                     loading: false,
-                    temperature: data[0].tempBMP,
-                    humidity: data[0].humiDHT,
-                    pressure: data[0].presBMP
-                })
-                 console.log(data);
+                    temperature: tempBMP,
+                    humidity: humiDHT,
+                    pressure: presBMP
+                });
             })
             .catch(() => {
                 this.setState({
