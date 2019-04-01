@@ -10,7 +10,7 @@ const Routes = () => (
         <Route path="/humidity" exact component={Humidity} />
         <Route path="/pressure" exact component={Pressure} />
         <Route path="/temperature" exact component={Temperature} />
-        <Route path="/" exact component={Dashboard} />
+        <Route path="/" component={Dashboard} />
     </Switch>
 );
 
