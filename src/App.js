@@ -6,6 +6,7 @@ import AppContainer from "./components/AppContainer";
 
 export default class App extends Component {
   render() {
+      console.log("Webhook works! 2.0");
     return (
         <BrowserRouter>
             <AppContainer>

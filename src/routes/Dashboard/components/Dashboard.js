@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./dashboard.css";
 
-const Dashboard = ({humidity, pressure, temperature}) => (
+const Dashboard = ({humidity, pressure, temperature, light}) => (
     <div className="dashboard">
         <div className="row">
             <Link to="/humidity">
@@ -17,6 +17,10 @@ const Dashboard = ({humidity, pressure, temperature}) => (
 
             <Link to="/temperature">
                 <Tile title="Temperature" value={temperature} />
+            </Link>
+
+            <Link to="/light">
+                <Tile title="Light" value={light} />
             </Link>
         </div>
     </div>
