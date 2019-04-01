@@ -22,12 +22,13 @@ export default class DashboardContainer extends React.Component {
             .then((response) => {
                 return response.json();
             })
-            .then(({tempBMP, humiDHT, presBMP}) => {
+            .then(({tempBMP, humiDHT, presBMP, light}) => {
                 this.setState({
                     loading: false,
                     temperature: tempBMP,
                     humidity: humiDHT,
-                    pressure: presBMP
+                    pressure: presBMP,
+                    light: light
                 });
             })
             .catch(() => {
@@ -38,7 +39,7 @@ export default class DashboardContainer extends React.Component {
     }
 
     render () {
-        const {loading, error, pluijmpjeSeenEnough, temperature, humidity, pressure} = this.state;
+        const {loading, error, pluijmpjeSeenEnough, temperature, humidity, pressure, light} = this.state;
 
         if (error && pluijmpjeSeenEnough) {
             return (
@@ -58,6 +59,7 @@ export default class DashboardContainer extends React.Component {
                 temperature={temperature}
                 humidity={humidity}
                 pressure={pressure}
+                light={light}
             />
         )
     }
