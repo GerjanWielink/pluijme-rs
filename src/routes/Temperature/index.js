@@ -2,6 +2,7 @@ import React, { Component } from  "react";
 import { baseUrl} from "../../constants";
 import {XYPlot, XAxis, YAxis, HorizontalGridLines, LineSeries} from 'react-vis';
 import "../../../node_modules/react-vis/dist/style.css";
+import "./index.css"
 
 export default class Temperature extends Component {
     constructor(props) {
@@ -13,24 +14,24 @@ export default class Temperature extends Component {
     }
 
     componentDidMount() {
-        fetch(`${baseUrl}/api/climate?time=1440`)
+        fetch(`${baseUrl}/api/climate?`)
             .then((response) => {
             return response.json();
         })
             .then((data) => {
             this.setState({
-                dataPoints : data.map(data => ({x : data.datatime, y : data.tempBMP})),
+                dataPoints : data.map(data => ({x : new Date(data.datatime * 1000), y : data.tempBMP})),
             });
         })
     }
     render (){
         return (
-            <div>
+            <div id="inner">
                 <XYPlot xType="time" height={500} width={1000}>
                     <HorizontalGridLines />
                     <LineSeries data={this.state.dataPoints} />
-                    <XAxis title="X" />
-                    <YAxis />
+                    <XAxis title="Time" />
+                    <YAxis title="Temperature (*C)"/>
                 </XYPlot>
             </div>
         );
