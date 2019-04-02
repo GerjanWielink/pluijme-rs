@@ -70,6 +70,6 @@ export default class DashboardContainer extends React.Component {
             this.setState({
                 pluijmpjeSeenEnough: true,
             })
-        }, 2000)
+        }, 0)
     }
 }
